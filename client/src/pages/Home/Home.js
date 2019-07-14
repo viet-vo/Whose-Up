@@ -12,34 +12,33 @@ export class Home extends Component {
                 name: "Allen",
                 isWorking: false,
                 keyCode: "alv",
-                services: [],
+                services: ["mani", "pedi", "wax", "fill", "pw"],
             },
             {
                 name: "Aden",
                 isWorking: false,
                 keyCode: "adv",
-                services: [],
+                services: ["mani", "pedi", "wax", "fill", "pw"],
             },
             {
                 name: "Ashley",
                 isWorking: false,
                 keyCode: "asv",
-                services: [],
+                services: ["mani", "pedi", "wax", "fill", "pw"],
             },
             {
                 name: "Tim",
                 isWorking: true,
                 keyCode: "tiv",
-                services: [],
+                services: ["mani", "pedi", "wax", "fill", "pw"],
             },
             {
                 name: "Mike",
                 isWorking: true,
                 keyCode: "miv",
-                services: [],
+                services: ["mani", "pedi", "wax", "fill", "pw"],
             },
         ],
-        // availableQueue: this.techs.filter(tech => tech.isWorking),
     };
     render() {
         const availableTech = this.state.techs.filter(tech => !tech.isWorking);
@@ -51,7 +50,7 @@ export class Home extends Component {
                     <Grid item xs={12}>
                         <Paper >xs=12</Paper>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={4}>
                         <Grid container spacing={3}>
                             {availableTech.map(tech => {
                                 return (
@@ -62,7 +61,7 @@ export class Home extends Component {
                             })}
                         </Grid>
                     </Grid>
-                    <Grid item xs={9}>
+                    <Grid item xs={8}>
                         <Grid container spacing={3}>
                             {workingTech.map(tech => {
                                 return (

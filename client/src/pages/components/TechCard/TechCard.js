@@ -6,6 +6,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import ServiceButton from '../ServiceButton';
+
 const useStyles = makeStyles({
     card: {
         minWidth: 275,
@@ -25,7 +27,6 @@ const useStyles = makeStyles({
 
 export default function TechCard(tech) {
     const classes = useStyles();
-    console.log(tech);
     if(!tech.props.isWorking) {
         return (
             <Card className={classes.card}>
@@ -36,7 +37,11 @@ export default function TechCard(tech) {
                    
                 </CardContent>
                 <CardActions>
-                    <Button size="small">Is Available</Button>
+                    {tech.props.services.map(service => {
+                        return(
+                            <ServiceButton key={service} props={service} />
+                        )
+                    })}
                 </CardActions>
             </Card>
         );
