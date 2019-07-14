@@ -48,6 +48,11 @@ export class Home extends Component {
                 position: null,
             },
         ],
+        updateUser: this.updateUser.bind(this)
+    };
+
+    updateUser (userObject) {
+        this.setState(userObject)
     };
 
     serviceStart = event => {
@@ -72,7 +77,7 @@ export class Home extends Component {
                             {availableTech.map(tech => {
                                 return (
                                     <Grid item key={tech.id} xs={11}>
-                                        <TechCard method={this.serviceStart.bind(this)} props={tech} />
+                                        <TechCard updateUser={this.updateUser} props={tech} />
                                     </Grid>
                                 )
                             })}

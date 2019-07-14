@@ -34,10 +34,13 @@ export default function ServiceButton(service) {
             return (
                 <Button 
                 id={service.id} 
+                position={service.position}
+                value={15 * 60 * 1000} 
                 variant="contained" 
                 color="primary" 
                 className={classes.button} 
-                onClick={service.method.bind(this)}>
+                // https://stackoverflow.com/questions/29537299/react-how-do-i-update-state-item1-on-setstate-with-jsfiddle
+                onClick={function() {console.log(15 + " minutes")}}>
                     Manicure
                 </Button >
             );
@@ -45,10 +48,12 @@ export default function ServiceButton(service) {
             return (
                 <Button 
                 id={service.id} 
+                position={service.position}
+                value={service.props} 
                 variant="contained" 
                 color="secondary" 
                 className={classes.button} 
-                onClick={service.method.bind(this)}>
+                onClick={function() {console.log(15 + " minutes")}}>
                     Pedicure
                 </Button >
             );
@@ -56,9 +61,12 @@ export default function ServiceButton(service) {
             return (
                 <Button 
                 id={service.id} 
+                position={service.position}
+                value={service.props} 
                 variant="contained" 
                 className={classes.wax} 
-                onClick={service.method.bind(this)}>
+                onClick={function() {console.log(5 + " minutes")}}
+                >
                     Wax
                 </Button >
             );
@@ -66,9 +74,11 @@ export default function ServiceButton(service) {
             return (
                 <Button 
                 id={service.id} 
+                position={service.position}
+                value={service.props} 
                 variant="contained" 
                 className={classes.fillin} 
-                onClick={service.method.bind(this)}>
+                onClick={function() {console.log(20 + " minutes")}}>
                     FillIn
                 </Button >
             );
@@ -76,9 +86,11 @@ export default function ServiceButton(service) {
             return (
                 <Button 
                 id={service.id} 
+                position={service.position}
+                value={service.props} 
                 variant="contained" 
                 className={classes.pw} 
-                onClick={service.method.bind(this)}>
+                onClick={function() {console.log(20 + " minutes")}}>
                     Pink&White
                 </Button >
             );
@@ -86,6 +98,8 @@ export default function ServiceButton(service) {
             return (
                 <Button 
                 id={service.id} 
+                position={service.position}
+                value={service.props} 
                 variant="contained" 
                 className={classes.button} >
                     Unknown
