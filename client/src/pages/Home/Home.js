@@ -39,7 +39,7 @@ export class Home extends Component {
                 isWorking: true,
                 id: "tiv",
                 services: ["mani", "pedi", "wax", "fill", "pw"],
-                timer: 1000 * 60 * 59,
+                timer: 20 * 60 * 1000,
                 position: null,
                 methods: []
             },
@@ -48,7 +48,7 @@ export class Home extends Component {
                 isWorking: true,
                 id: "miv",
                 services: ["mani", "pedi", "wax", "fill", "pw"],
-                timer: 1000 * 60 * 30,
+                timer: 25 * 60 * 1000,
                 position: null,
                 methods: []
             },
@@ -86,7 +86,7 @@ export class Home extends Component {
                             {workingTech.map(tech => {
                                 return (
                                     <Grid item key={tech.id} xs={6}>
-                                        <TechCard props={tech} nowWorking />
+                                        <TechCard props={tech} />
                                     </Grid>
                                 )
                             })}

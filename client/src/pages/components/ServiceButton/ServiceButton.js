@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function ServiceButton(service) {
-    console.log(service)
+    // console.log(service)
     const classes = useStyles();
     switch (service.props) {
         case "mani":

@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Countdown from 'react-countdown-now';
 
 import ServiceButton from '../ServiceButton';
 
@@ -26,13 +27,14 @@ const useStyles = makeStyles({
 });
 
 export default function TechCard(tech) {
-    // console.log(tech)
+    let time = tech.props.timer;
+    console.log(tech)
     const classes = useStyles();
     if(!tech.props.isWorking) {
         return (
             <Card className={classes.card}>
                 <CardContent>
-                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                    <Typography className={classes.title} color="textPrimary" gutterBottom>
                         {tech.props.name}
                     </Typography>
                    
@@ -50,10 +52,22 @@ export default function TechCard(tech) {
         return(
             <Card className={classes.card}>
                 <CardContent>
-                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                    <Typography className={classes.title} color="textPrimary" gutterBottom>
                         {tech.props.name}
                     </Typography>
-                   
+                    
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                        {time}
+                    </Typography>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                        <Countdown
+                            date={Date.now() + time}
+                            intervalDelay={1000}
+                            precision={3}
+                            renderer={props => <span>{Math.floor((props.total)/(60 * 1000))}:{Math.floor((props.total)%(60 * 1000)/(1000))}</span>}
+                        />
+                    </Typography>
+                    
                 </CardContent>
                 <CardActions>
                     <Button size="small">Working</Button>
