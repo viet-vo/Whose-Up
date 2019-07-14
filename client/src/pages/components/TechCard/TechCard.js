@@ -42,7 +42,7 @@ export default function TechCard(tech) {
                 <CardActions>
                     {tech.props.services.map(service => {
                         return(
-                            <ServiceButton value={tech.props.id} position={tech.props.position} key={service} props={service} methods={tech.methods}/>
+                            <ServiceButton id={tech.props.id} position={tech.props.position} key={service} props={service} method={tech.method}/>
                         )
                     })}
                 </CardActions>

@@ -33,65 +33,59 @@ export default function ServiceButton(service) {
         case "mani":
             return (
                 <Button 
-                id={service.value} 
-                value={service.props} 
+                id={service.id} 
                 variant="contained" 
                 color="primary" 
                 className={classes.button} 
-                onClick={function() {console.log(15 + " minutes")}}>
+                onClick={service.method.bind(this)}>
                     Manicure
                 </Button >
             );
         case "pedi":
             return (
                 <Button 
-                id={service.value} 
-                value={service.props} 
+                id={service.id} 
                 variant="contained" 
                 color="secondary" 
                 className={classes.button} 
-                onClick={function() {console.log(15 + " minutes")}}>
+                onClick={service.method.bind(this)}>
                     Pedicure
                 </Button >
             );
         case "wax":
             return (
                 <Button 
-                id={service.value} 
-                value={service.props} 
+                id={service.id} 
                 variant="contained" 
                 className={classes.wax} 
-                onClick={function() {console.log(5 + " minutes")}}>
+                onClick={service.method.bind(this)}>
                     Wax
                 </Button >
             );
         case "fill":
             return (
                 <Button 
-                id={service.value} 
-                value={service.props} 
+                id={service.id} 
                 variant="contained" 
                 className={classes.fillin} 
-                onClick={function() {console.log(20 + " minutes")}}>
+                onClick={service.method.bind(this)}>
                     FillIn
                 </Button >
             );
         case "pw":
             return (
                 <Button 
-                id={service.value} 
-                value={service.props} 
+                id={service.id} 
                 variant="contained" 
                 className={classes.pw} 
-                onClick={function() {console.log(20 + " minutes")}}>
+                onClick={service.method.bind(this)}>
                     Pink&White
                 </Button >
             );
         default:
             return (
                 <Button 
-                id={service.value} 
-                value={service.props} 
+                id={service.id} 
                 variant="contained" 
                 className={classes.button} >
                     Unknown

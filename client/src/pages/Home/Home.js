@@ -53,6 +53,7 @@ export class Home extends Component {
     serviceStart = event => {
         event.preventDefault();
         // const { id, position, service } = event.target;
+        console.log(event);
         // todo
         // add function to rearrange position of selected worker
     }
@@ -71,7 +72,7 @@ export class Home extends Component {
                             {availableTech.map(tech => {
                                 return (
                                     <Grid item key={tech.id} xs={11}>
-                                        <TechCard methods={this.serviceStart} props={tech} />
+                                        <TechCard method={this.serviceStart.bind(this)} props={tech} />
                                     </Grid>
                                 )
                             })}
