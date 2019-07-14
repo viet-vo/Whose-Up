@@ -26,6 +26,7 @@ const useStyles = makeStyles({
 });
 
 export default function TechCard(tech) {
+    console.log(tech);
     const classes = useStyles();
     if(!tech.props.isWorking) {
         return (
@@ -39,7 +40,7 @@ export default function TechCard(tech) {
                 <CardActions>
                     {tech.props.services.map(service => {
                         return(
-                            <ServiceButton key={service} props={service} />
+                            <ServiceButton value={tech.props.id} key={service} props={service} />
                         )
                     })}
                 </CardActions>

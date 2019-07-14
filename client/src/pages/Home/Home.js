@@ -11,35 +11,53 @@ export class Home extends Component {
             {
                 name: "Allen",
                 isWorking: false,
-                keyCode: "alv",
+                id: "alv",
                 services: ["mani", "pedi", "wax", "fill", "pw"],
+                timer: 0,
+                position: 0,
+                methods: []
             },
-            {
-                name: "Aden",
-                isWorking: false,
-                keyCode: "adv",
-                services: ["mani", "pedi", "wax", "fill", "pw"],
-            },
-            {
-                name: "Ashley",
-                isWorking: false,
-                keyCode: "asv",
-                services: ["mani", "pedi", "wax", "fill", "pw"],
-            },
+            // {
+            //     name: "Aden",
+            //     isWorking: false,
+            //     id: "adv",
+            //     services: ["mani", "pedi", "wax", "fill", "pw"],
+            //     timer: 0,
+            //     position: 1,
+            //     methods: []
+            // },
+            // {
+            //     name: "Ashley",
+            //     isWorking: false,
+            //     id: "asv",
+            //     services: ["mani", "pedi", "wax", "fill", "pw"],
+            //     timer: 0,
+            //     position: 2,
+            //     methods: []
+            // },
             {
                 name: "Tim",
                 isWorking: true,
-                keyCode: "tiv",
+                id: "tiv",
                 services: ["mani", "pedi", "wax", "fill", "pw"],
+                timer: 1000 * 60 * 59,
+                position: null,
+                methods: []
             },
             {
                 name: "Mike",
                 isWorking: true,
-                keyCode: "miv",
+                id: "miv",
                 services: ["mani", "pedi", "wax", "fill", "pw"],
+                timer: 1000 * 60 * 30,
+                position: null,
+                methods: []
             },
         ],
     };
+
+    
+
     render() {
         const availableTech = this.state.techs.filter(tech => !tech.isWorking);
         const workingTech = this.state.techs.filter(tech => tech.isWorking);
@@ -54,7 +72,7 @@ export class Home extends Component {
                         <Grid container spacing={3}>
                             {availableTech.map(tech => {
                                 return (
-                                    <Grid item key={tech.keyCode} xs={11}>
+                                    <Grid item key={tech.id} xs={11}>
                                         <TechCard props={tech} />
                                     </Grid>
                                 )
@@ -65,7 +83,7 @@ export class Home extends Component {
                         <Grid container spacing={3}>
                             {workingTech.map(tech => {
                                 return (
-                                    <Grid item key={tech.keyCode} xs={6}>
+                                    <Grid item key={tech.id} xs={6}>
                                         <TechCard props={tech} />
                                     </Grid>
                                 )
