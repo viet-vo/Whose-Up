@@ -1,0 +1,11 @@
+{
+  "name": "Whose-Up",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:viet-vo/Whose-Up.git",
+  "author": "Viet Vo <viet.allen.qvo@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "cd client && npm start"
+  }
+}
