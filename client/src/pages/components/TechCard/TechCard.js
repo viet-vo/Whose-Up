@@ -61,6 +61,7 @@ export default function TechCard(tech) {
                     </Typography>
                     <Typography className={classes.title} color="textSecondary" gutterBottom>
                         <Countdown
+                        // https://www.npmjs.com/package/react-countdown-now#api-reference
                             date={Date.now() + time}
                             intervalDelay={1000}
                             precision={3}
