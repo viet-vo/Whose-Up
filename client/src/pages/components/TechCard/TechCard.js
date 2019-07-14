@@ -34,7 +34,7 @@ export default function TechCard(tech) {
         return (
             <Card className={classes.card}>
                 <CardContent>
-                    <Typography className={classes.title} color="textPrimary" gutterBottom>
+                    <Typography variant="h3" color="textPrimary" gutterBottom>
                         {tech.props.name}
                     </Typography>
                    
@@ -42,7 +42,7 @@ export default function TechCard(tech) {
                 <CardActions>
                     {tech.props.services.map(service => {
                         return(
-                            <ServiceButton value={tech.props.id} key={service} props={service} />
+                            <ServiceButton value={tech.props.id} position={tech.props.position} key={service} props={service} methods={tech.methods}/>
                         )
                     })}
                 </CardActions>
@@ -52,12 +52,8 @@ export default function TechCard(tech) {
         return(
             <Card className={classes.card}>
                 <CardContent>
-                    <Typography className={classes.title} color="textPrimary" gutterBottom>
+                    <Typography variant="h3"  color="textPrimary" gutterBottom>
                         {tech.props.name}
-                    </Typography>
-                    
-                    <Typography className={classes.title} color="textSecondary" gutterBottom>
-                        {time}
                     </Typography>
                     <Typography className={classes.title} color="textSecondary" gutterBottom>
                         <Countdown
@@ -65,7 +61,8 @@ export default function TechCard(tech) {
                             date={Date.now() + time}
                             intervalDelay={1000}
                             precision={3}
-                            renderer={props => <span>{Math.floor((props.total)/(60 * 1000))}:{Math.floor((props.total)%(60 * 1000)/(1000))}</span>}
+                            renderer={props => <span>{props.minutes}:{props.seconds}</span>}
+                            onComplete={function() {console.log("onComplete called")}}
                         />
                     </Typography>
                     

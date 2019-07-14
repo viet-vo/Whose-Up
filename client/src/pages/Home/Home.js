@@ -14,7 +14,6 @@ export class Home extends Component {
                 services: ["mani", "pedi", "wax", "fill", "pw"],
                 timer: 0,
                 position: 0,
-                methods: []
             },
             // {
             //     name: "Aden",
@@ -23,7 +22,6 @@ export class Home extends Component {
             //     services: ["mani", "pedi", "wax", "fill", "pw"],
             //     timer: 0,
             //     position: 1,
-            //     methods: []
             // },
             // {
             //     name: "Ashley",
@@ -32,16 +30,14 @@ export class Home extends Component {
             //     services: ["mani", "pedi", "wax", "fill", "pw"],
             //     timer: 0,
             //     position: 2,
-            //     methods: []
             // },
             {
                 name: "Tim",
                 isWorking: true,
                 id: "tiv",
                 services: ["mani", "pedi", "wax", "fill", "pw"],
-                timer: 20 * 60 * 1000,
+                timer: 1 * 60 * 1000,
                 position: null,
-                methods: []
             },
             {
                 name: "Mike",
@@ -50,16 +46,16 @@ export class Home extends Component {
                 services: ["mani", "pedi", "wax", "fill", "pw"],
                 timer: 25 * 60 * 1000,
                 position: null,
-                methods: []
             },
         ],
     };
 
-    nowWorking(event) {
+    serviceStart = event => {
         event.preventDefault();
-        console.log(event);
-
-    };
+        // const { id, position, service } = event.target;
+        // todo
+        // add function to rearrange position of selected worker
+    }
 
     render() {
         const availableTech = this.state.techs.filter(tech => !tech.isWorking);
@@ -75,7 +71,7 @@ export class Home extends Component {
                             {availableTech.map(tech => {
                                 return (
                                     <Grid item key={tech.id} xs={11}>
-                                        <TechCard props={tech} />
+                                        <TechCard methods={this.serviceStart} props={tech} />
                                     </Grid>
                                 )
                             })}
