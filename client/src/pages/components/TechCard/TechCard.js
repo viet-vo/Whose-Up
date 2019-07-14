@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 });
 
 export default function TechCard(tech) {
-    console.log(tech);
+    // console.log(tech)
     const classes = useStyles();
     if(!tech.props.isWorking) {
         return (

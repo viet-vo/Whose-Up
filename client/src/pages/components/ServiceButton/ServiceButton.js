@@ -32,37 +32,68 @@ export default function ServiceButton(service) {
     switch (service.props) {
         case "mani":
             return (
-                <Button variant="contained" color="primary" className={classes.button} onClick={function() {console.log(15 + " minutes")}}>
+                <Button 
+                id={service.value} 
+                value={service.props} 
+                variant="contained" 
+                color="primary" 
+                className={classes.button} 
+                onClick={function() {console.log(15 + " minutes")}}>
                     Manicure
                 </Button >
             );
         case "pedi":
             return (
-                <Button variant="contained" color="secondary" className={classes.button} onClick={function() {console.log(15 + " minutes")}}>
+                <Button 
+                id={service.value} 
+                value={service.props} 
+                variant="contained" 
+                color="secondary" 
+                className={classes.button} 
+                onClick={function() {console.log(15 + " minutes")}}>
                     Pedicure
                 </Button >
             );
         case "wax":
             return (
-                <Button variant="contained" className={classes.wax} onClick={function() {console.log(5 + " minutes")}}>
+                <Button 
+                id={service.value} 
+                value={service.props} 
+                variant="contained" 
+                className={classes.wax} 
+                onClick={function() {console.log(5 + " minutes")}}>
                     Wax
                 </Button >
             );
         case "fill":
             return (
-                <Button variant="contained" className={classes.fillin} onClick={function() {console.log(20 + " minutes")}}>
+                <Button 
+                id={service.value} 
+                value={service.props} 
+                variant="contained" 
+                className={classes.fillin} 
+                onClick={function() {console.log(20 + " minutes")}}>
                     FillIn
                 </Button >
             );
         case "pw":
             return (
-                <Button variant="contained" className={classes.pw} onClick={function() {console.log(20 + " minutes")}}>
+                <Button 
+                id={service.value} 
+                value={service.props} 
+                variant="contained" 
+                className={classes.pw} 
+                onClick={function() {console.log(20 + " minutes")}}>
                     Pink&White
                 </Button >
             );
         default:
             return (
-                <Button variant="contained" className={classes.button} >
+                <Button 
+                id={service.value} 
+                value={service.props} 
+                variant="contained" 
+                className={classes.button} >
                     Unknown
                 </Button>
             );

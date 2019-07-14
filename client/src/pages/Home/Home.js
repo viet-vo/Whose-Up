@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 import NavBar from '../components/NavBar';
@@ -56,7 +55,11 @@ export class Home extends Component {
         ],
     };
 
-    
+    nowWorking(event) {
+        event.preventDefault();
+        console.log(event);
+
+    };
 
     render() {
         const availableTech = this.state.techs.filter(tech => !tech.isWorking);
@@ -64,9 +67,8 @@ export class Home extends Component {
         return (
             <div>
                 <Grid container spacing={3}>
-                    <NavBar />
                     <Grid item xs={12}>
-                        <Paper >xs=12</Paper>
+                        <NavBar />
                     </Grid>
                     <Grid item xs={4}>
                         <Grid container spacing={3}>
@@ -84,7 +86,7 @@ export class Home extends Component {
                             {workingTech.map(tech => {
                                 return (
                                     <Grid item key={tech.id} xs={6}>
-                                        <TechCard props={tech} />
+                                        <TechCard props={tech} nowWorking />
                                     </Grid>
                                 )
                             })}
